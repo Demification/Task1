@@ -9,10 +9,6 @@ class CSVRecords : public WinPrint
 {
     Q_OBJECT
 
-    const int szCharsInColumn = 8;
-    const int szColumnsInRecord = 6;
-    const int szRecordsInFile = 1024;
-
     mutable QStringList recordlist;
 
     const QString vowelchars = "eyuioaEYUIOA";
@@ -20,12 +16,15 @@ class CSVRecords : public WinPrint
 
     bool isVowelChars(QChar a);
 
-
     QString createRand8Chars();
 
     QString createRecordString();
 
 public:
+    static int szCharsInColumn;
+    static int szColumnsInRecord;
+    static int szRecordsInFile;
+
     explicit CSVRecords(QObject *parent = nullptr);
 
     const QStringList& createRecordStrings();

@@ -14,7 +14,6 @@ CSVFile::CSVFile(QString filepath, QObject *parent)
 void CSVFile::writeRecordsToFile(const QStringList& recordlist)
 {
   writeRecordsToAnotherFile(filepath, recordlist);
-
 }
 
 void CSVFile::writeRecordsToAnotherFile(QString filepath, const QStringList &recordlist)

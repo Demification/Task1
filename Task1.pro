@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,13 +13,15 @@ SOURCES += \
     csv_task/csvrecords.cpp \
     csv_task/winprint.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    sql_task/justsqlite.cpp
 
 HEADERS += \
     csv_task/csvfile.h \
     csv_task/csvrecords.h \
     csv_task/winprint.h \
-    mainwindow.h
+    mainwindow.h \
+    sql_task/justsqlite.h
 
 FORMS += \
     mainwindow.ui

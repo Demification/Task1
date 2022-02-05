@@ -1,6 +1,10 @@
 #include "csvrecords.h"
 #include <QRandomGenerator>
 
+int CSVRecords::szCharsInColumn = 8;
+int CSVRecords::szColumnsInRecord = 6;
+int CSVRecords::szRecordsInFile = 1024;
+
 CSVRecords::CSVRecords(QObject *parent)
     : WinPrint{parent}
 {
