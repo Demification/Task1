@@ -60,7 +60,8 @@ QString MainWindow::getAnotherFilepath()
 
 void MainWindow::connectPrint(WinPrint *sender)
 {
-    connect(sender, &WinPrint::print, this, [&](QString& text){ui->textEdit->setText(ui->textEdit->toPlainText() + text + '\n');});
+    auto lambdaSlot = [&](const QString& text){ui->textEdit->setText(ui->textEdit->toPlainText() + text + '\n');};
+    connect(sender, &WinPrint::print, this, lambdaSlot);
 }
 
 void MainWindow::on_pushButton_2_clicked()

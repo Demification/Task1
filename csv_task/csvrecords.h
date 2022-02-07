@@ -20,6 +20,19 @@ class CSVRecords : public WinPrint
 
     QString createRecordString();
 
+    template<typename T> int oneCharSumbolToInt(T oneChar)
+    {
+        return QString(oneChar).toInt();
+    }
+
+    template<typename T> bool isOddNumber(T number)
+    {
+        if(number % 2)
+            return false;
+
+        return true;
+    }
+
 public:
     static int szCharsInColumn;
     static int szColumnsInRecord;
@@ -38,7 +51,6 @@ public:
     void repleaceOddNumber2Sharp();
 
     void delColumnIfFirstVowelChar();
-
 };
 
 #endif // CSVRECORDS_H

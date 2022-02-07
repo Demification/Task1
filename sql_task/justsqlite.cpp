@@ -40,7 +40,6 @@ bool JustSQLite::create()
         model = new QSqlTableModel(this, db);
         model->setTable(tbname);
         model->select();
-
     }
     else
     {

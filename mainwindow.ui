@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>688</width>
+    <width>795</width>
     <height>662</height>
    </rect>
   </property>
@@ -41,7 +41,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>view records list</string>
+              <string>View records list</string>
              </property>
             </widget>
            </item>
@@ -76,7 +76,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>delete records in which the first character of a digit is in the second column</string>
+            <string>Delete records in which the first character of a digit is in the second column</string>
            </property>
           </widget>
          </item>

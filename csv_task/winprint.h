@@ -10,7 +10,7 @@ public:
     explicit WinPrint(QObject *parent = nullptr);
 
 signals:
-    void print(QString& text);
+    void print(const QString& text);
 };
 
 #endif // WINPRINT_H

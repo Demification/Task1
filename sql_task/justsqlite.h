@@ -29,7 +29,6 @@ public:
     bool loadCSVRecords(const QStringList& records);
 
     bool execAndRefresh(const QString& execstr);
-
 };
 
 #endif // JUSTSQLITE_H

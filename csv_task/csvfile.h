@@ -21,7 +21,6 @@ public:
      void writeRecordsToAnotherFile(QString filepath, const QStringList& recordlist);
 
     void writeRecordsFromFile(QStringList* recordlist);
-
 };
 
 #endif // CSVFILE_H

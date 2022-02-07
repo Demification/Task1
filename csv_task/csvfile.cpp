@@ -7,8 +7,7 @@
 CSVFile::CSVFile(QString filepath, QObject *parent)
     : WinPrint{parent}, filepath{filepath}
 {
-    QString text = "file path:" + filepath;
-    emit print(text);
+    emit print("CSVFile. Default file path: " + filepath);
 }
 
 void CSVFile::writeRecordsToFile(const QStringList& recordlist)
@@ -29,13 +28,11 @@ void CSVFile::writeRecordsToAnotherFile(QString filepath, const QStringList &rec
              ++i;
         }
 
-        QString text = "was writing " + QString::number(i) + " records to file: " + filepath;
-        emit print(text);
+        emit print("CSVFile. Was writing " + QString::number(i) + " records to file: " + filepath);
     }
     else
     {
-        QString text = "error writing file";
-        emit print(text);
+        emit print("Error writing file.");
     }
 }
 
@@ -52,12 +49,11 @@ void CSVFile::writeRecordsFromFile(QStringList *recordlist)
             i++;
        }
 
-       QString text = "was reading " + QString::number(i) + "records from file";
-       emit print(text);
+       emit print("CSVFile. Was reading " + QString::number(i) + " records from file.");
     }
     else
     {
-        QString text = "error reading file";
+        QString text = "Error reading file.";
         emit print(text);
     }
 }

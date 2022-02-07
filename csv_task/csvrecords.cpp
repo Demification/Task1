@@ -16,8 +16,7 @@ const QStringList& CSVRecords::createRecordStrings()
     for(int i = 0; i < szRecordsInFile; i++)
         recordlist << createRecordString();
 
-    QString text = "created list of records";
-    emit print(text);
+    emit print("CSVRecords. Created list of records.");
 
     return recordlist;
 }
@@ -36,8 +35,7 @@ void CSVRecords::clearRecordlist()
 {
     recordlist.clear();
 
-    QString text = "clear list of records";
-    emit print(text);
+    emit print("CSVRecords. Clear list of records.");
 }
 
 void CSVRecords::repleaceOddNumber2Sharp()
@@ -45,35 +43,32 @@ void CSVRecords::repleaceOddNumber2Sharp()
     for(auto& record: recordlist)
         for(int i = 0; i < record.length(); i++)
             if(record[i].isDigit())
-                if(QString(record[i]).toInt() % 2)
+                if(isOddNumber(oneCharSumbolToInt(record[i])))
                     record[i] = '#';
 
-    QString text = "repleace odd number to sharp symbol";
-    emit print(text);
-
+    emit print("CSVRecords. Repleace odd number to sharp symbol.");
 }
 
 void CSVRecords::delColumnIfFirstVowelChar()
 {
-    QStringList tempstrlst;
+    QStringList strlst;
     for(auto& record: recordlist)
     {
         QString tmpstr;
         for(auto& column: record.splitRef(','))
             if(!isVowelChars(column[0]))
                 tmpstr.append(column + ',');
-        tempstrlst.push_back(tmpstr);
+        strlst.push_back(tmpstr);
     }
 
     recordlist.clear();
-    for(auto& record: tempstrlst)
+    for(auto& record: strlst)
     {
         record.chop(1);
         recordlist.push_back(record);
     }
 
-    QString text = "delete column if first char is vowel";
-    emit print(text);
+    emit print("CSVRecords. Delete column if first char is vowel.");
 }
 
 QString CSVRecords::createRecordString()
